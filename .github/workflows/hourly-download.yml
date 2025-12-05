@@ -1,9 +1,9 @@
-name: funny stuff
+name: Hourly Download adblock JS
 
 on:
   schedule:
     - cron: '0 * * * *' # every hour at minute 0
-  workflow_dispatch: # allow manual runs
+  workflow_dispatch:
 
 jobs:
   download-adblock-js:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: funny stuff
+      - name: Download adblock JS with curl
         run: |
           curl -sSL 'https://adbpage.com/adblock?v=3&format=js' -o june.js
 
